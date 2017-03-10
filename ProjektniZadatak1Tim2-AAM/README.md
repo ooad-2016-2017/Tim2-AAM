@@ -1,4 +1,4 @@
-Clanovi tima:
+Članovi tima:
 
 1. Amera Alić
 

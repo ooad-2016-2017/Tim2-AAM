@@ -42,11 +42,11 @@ dodavanja novih uposlenih(stomatologa), brisanje uposlenih, nadziranje rada cije
 
 
 ###### Akteri
-## Pacijent
+### Pacijent
 Pacijent je osoba koja ima mogućnost da se registruje ili prijavi na stranicu ordinacije. Ukoliko je prijavljen, ima mogućnost da odabere doktora i da rezerviše termin. Pored toga pacijent ima uvid u svoj karton. 
-## Stomatolog 
+### Stomatolog 
 Stomatolog je osoba koja prilikom prijavljivanja na stranicu ima pristup kartonima svih pacijenata koje može uređivati, kao i pregled kartona pacijenata koji su za taj dan naruceni  
-## Administrator
+### Administrator
 Administrator ima zadatak da prilikom zaposlenja novih stomatologa ili na početku rada ordinacije bude taj koji kreira profil stomatologa.
 
 

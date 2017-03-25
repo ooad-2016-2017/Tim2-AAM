@@ -10,6 +10,9 @@
 
 3.Mirza Ceman
 
+###### Opis teme
+Sistem online stomatološke oridinacije treba prvenstveno da olakša pacijentima  proces rezervacije termina jer pacijenti više ne moraju dolaziti na lice mjesta da bi se naručili. Također, on dopušta pacijentu uvid u vlastiti karton. Sistem olakšava organizaciju rada stomatologa, te mu pruža mogućnost da pristupa kartonima svih pacijenata ali i da uređuje te kartone i vodi evidenciju o izmjenama. Stomatologu se nudi pregled pacijenata koji su za taj određeni (dogovoreni) period naručeni, što je veoma korisno za njega. Sistem se brine da se pacijent obavijesti o narednom(dogovorenom) predloženom terminu, što oslobađa pacijenta obaveze da pamti termine. Ovaj sistem doprinosi i olakšava komunikaciju između pacijenta i stomatologa, te nudi opcije svim korisnicima koje su korisne i iz dana u dan sve potrebnije.
+
 ###### Procesi
 1. Prijava/Registracija: 
 Svi korisnici sistema se moraju prijaviti ili registrovati. S obzirom da admin dodaje nove uposlene, tako se oni mogu samo prijaviti, dok se pacijenti koji prvi put koriste usluge sistema(odlucili su se za ovu stomatolosku ordinaciju) moraju prvo registrovati, a svaki naredni put ce se samo prijavljivati. Prilikom registracije korisnika, on unosi svoje licne podatke i onda sistem kreira prazan karton.
@@ -36,6 +39,15 @@ registracije (u slucaju da prvi put zeli koristiti usluge ordinacije), prijave (
 kreiranje praznog kartona pri svakoj registraciji, informisanje pacijenta da je izabrani termin zauzet, informisanje pacijenta o predlozenom terminu (predlozio stomatolog)
 4. Admin ima mogucnosti: 
 dodavanja novih uposlenih(stomatologa), brisanje uposlenih, nadziranje rada cijelog sistema 
+
+
+###### Akteri
+## Pacijent
+Pacijent je osoba koja ima mogućnost da se registruje ili prijavi na stranicu ordinacije. Ukoliko je prijavljen, ima mogućnost da odabere doktora i da rezerviše termin. Pored toga pacijent ima uvid u svoj karton. 
+## Stomatolog 
+Stomatolog je osoba koja prilikom prijavljivanja na stranicu ima pristup kartonima svih pacijenata koje može uređivati, kao i pregled kartona pacijenata koji su za taj dan naruceni  
+## Administrator
+Administrator ima zadatak da prilikom zaposlenja novih stomatologa ili na početku rada ordinacije bude taj koji kreira profil stomatologa.
 
 
 

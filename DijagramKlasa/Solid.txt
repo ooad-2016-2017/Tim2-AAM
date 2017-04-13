@@ -1,0 +1,17 @@
+1. Princip pojedinacne odgovornosti 
+Princip nije ispoštovan, jer neke naše klase znaju previše.
+Na primjer klasa Pacijent ima metodu prikaziKarton, koja bi trebala biti vezana samo za klasu Karton.
+
+2. Otvoreno zatvoren princip
+Sve klase zadovoljavaju ovaj princip jer se ne mijenja stanje klase preko neke druge klase.
+
+3. Liskov princip
+S obzirom da nemamo nasljedivanje i ovaj princip je ispoštovan.
+
+4.Princip inverzije ovisnosti
+Ovaj princip nije ispoštovan jer klase nižeg nivoa teže kontejnerskoj klasi.
+Da je naša klasa StomatoloskaOrdinacija bila apstraktna, princip bi bio zadovoljen.
+
+5.Princip izoliranja interfejsa 
+Princip nije zadovoljen jer klasa StomatoloskaOrdinacija ima metode koje mogu koristiti svi korisnici klase, a ne bi trebali.
+Na primjer metodu DodajStomatologa trebao bi koristiti samo administrator, a ne pacijenti i stomatolozi.

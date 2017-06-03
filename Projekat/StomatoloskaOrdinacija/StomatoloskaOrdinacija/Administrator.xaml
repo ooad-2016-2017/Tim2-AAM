@@ -26,7 +26,7 @@
                     <TextBlock x:Name="textBlock7" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Adresa:" VerticalAlignment="Top" Width="57" Margin="57,150,-52.667,-150"/>
                     <TextBlock x:Name="textBlock8" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Prezime:" VerticalAlignment="Top" Width="62" Margin="52,100,-52.667,-100"/>
                     <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="E-mail:" VerticalAlignment="Top" Width="62" Margin="52,200,-52.667,-219"/>
-                    <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Korisnicno ime:" VerticalAlignment="Top" Width="111" Margin="322,49,-371.667,-49" SelectionChanged="textBlock4_SelectionChanged"/>
+                    <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Korisnicno ime:" VerticalAlignment="Top" Width="111" Margin="322,49,-371.667,-49" />
                     <TextBlock x:Name="textBlock5" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Lozinka: " VerticalAlignment="Top" Width="66" Margin="367,99,-371.667,-99"/>
                     <TextBox x:Name="textBox6" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" Margin="119,45,-198,-45"/>
                     <TextBox x:Name="textBox7" HorizontalAlignment="Left" Height="32"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" Margin="119,145,-198,-150"/>

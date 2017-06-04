@@ -17,6 +17,21 @@ namespace StomatoloskaOrdinacija.Models
         private DateTime sljedeci_termin;
         private Karton karton;
 
+        public Pacijent()
+        { }
+
+        public Pacijent(string ime, string prezime, string jMBG, string email, string user_name, string lozinka, DateTime sljedeci_termin, Karton karton)
+        {
+            this.ime = ime;
+            this.prezime = prezime;
+            JMBG = jMBG;
+            this.email = email;
+            this.user_name = user_name;
+            this.lozinka = lozinka;
+            this.sljedeci_termin = sljedeci_termin;
+            this.karton = karton;
+        }
+
         public string Ime
         {
             get

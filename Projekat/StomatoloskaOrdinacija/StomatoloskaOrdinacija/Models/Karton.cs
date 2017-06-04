@@ -11,6 +11,12 @@ namespace StomatoloskaOrdinacija.Models
         private DateTime predlozeni_termin;
         private List<string> stanje;
 
+        public Karton(DateTime predlozeni_termin, List<string> stanje)
+        {
+            this.predlozeni_termin = predlozeni_termin;
+            this.stanje = stanje;
+        }
+
         public DateTime Predlozeni_termin
         {
             get

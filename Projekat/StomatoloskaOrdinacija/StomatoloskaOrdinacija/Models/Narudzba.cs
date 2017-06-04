@@ -8,6 +8,7 @@ namespace StomatoloskaOrdinacija.Models
 {
     public class Narudzba
     {
+        public Narudzba() { }
     }
 
 }

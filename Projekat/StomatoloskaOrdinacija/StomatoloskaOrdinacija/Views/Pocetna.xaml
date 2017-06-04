@@ -23,18 +23,18 @@
             <CalendarDatePicker x:Name="datumRodjenjaCalendarDatePicker" Header="Datum rodjenja" />
             <TextBlock  TextWrapping="Wrap" Text="E-Mail: " />
             <TextBox x:Name="txtEmail" TextWrapping="Wrap"/>
-
-
             <TextBlock  TextWrapping="Wrap" Text="Adresa: " />
             <TextBox x:Name="txtAdress" TextWrapping="Wrap"  />
+            <Button Name="btnRegistracija" Margin="40,10,0,0"  Click="btnRegistracija_Click">Registracija</Button>
         </StackPanel>
-        <StackPanel Margin="366,140,10,39">
+        <StackPanel Margin="366,50,10,39">
             <TextBlock  TextWrapping="Wrap" Text="Korisnicko ime: " />
             <TextBox x:Name="txtKorisnickoIme" TextWrapping="Wrap"/>
 
 
             <TextBlock  TextWrapping="Wrap" Text="Lozinka: " />
             <TextBox x:Name="txtLozinka" TextWrapping="Wrap"  />
+            <Button Name="btnLogin" Margin="40,10,0,0"  Click="btnLogin_Click">Prijava</Button>
 
 
         </StackPanel>

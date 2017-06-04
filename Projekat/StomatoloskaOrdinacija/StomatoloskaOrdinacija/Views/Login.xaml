@@ -18,7 +18,7 @@
                 Width="150" />
                 <PasswordBox Name="txtPassword" PlaceholderText="Šifra" Margin="10,10,10,0"
                 Width="150" />
-                <Button Name="btnLogin" Margin="30,10,0,0" >Prijava</Button>
+            <Button Name="btnLogin" Margin="30,10,0,0"  Click="btnLogin_Click"  >Prijava</Button>
      </StackPanel>
     </Grid>
 </Page>

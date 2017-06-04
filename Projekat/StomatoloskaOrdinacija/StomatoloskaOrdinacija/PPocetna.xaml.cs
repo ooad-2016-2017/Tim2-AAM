@@ -38,7 +38,7 @@ namespace StomatoloskaOrdinacija
             this.path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "db2.sqlite");
             con = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
             //conn = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
-            con.CreateTable<Models.Pacijent>();
+            con.CreateTable<Models.Pacijent1>();
         }
 
         private async void btnLogin_Click(object sender, RoutedEventArgs e)
@@ -52,7 +52,7 @@ namespace StomatoloskaOrdinacija
                 pronasao = true;
             }
            
-            var query = con.Table<Models.Pacijent>();
+            var query = con.Table<Models.Pacijent1>();
             foreach (var pacijent in query)
             {
                 if (pacijent.User_name == us && pacijent.Lozinka == pass)
@@ -83,6 +83,11 @@ namespace StomatoloskaOrdinacija
         private void btnRegistracija_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(Pocetna));
+        }
+
+        private void txtBoxUsername_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
     

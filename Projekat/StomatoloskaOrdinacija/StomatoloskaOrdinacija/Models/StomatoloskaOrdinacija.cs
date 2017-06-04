@@ -10,10 +10,10 @@ namespace StomatoloskaOrdinacija.Models
     {
         private String naziv;
         private Administrator admin;
-        private List<Pacijent> pacijenti;
+        private List<Pacijent1> pacijenti;
         private List<Stomatolog> stomatolozi;
 
-        public StomatoloskaOrdinacija(string naziv, Administrator admin, List<Pacijent> pacijenti, List<Stomatolog> stomatolozi)
+        public StomatoloskaOrdinacija(string naziv, Administrator admin, List<Pacijent1> pacijenti, List<Stomatolog> stomatolozi)
         {
             this.Naziv = naziv;
             this.Admin = admin;
@@ -47,7 +47,7 @@ namespace StomatoloskaOrdinacija.Models
             }
         }
 
-        public List<Pacijent> Pacijenti
+        public List<Pacijent1> Pacijenti
         {
             get
             {

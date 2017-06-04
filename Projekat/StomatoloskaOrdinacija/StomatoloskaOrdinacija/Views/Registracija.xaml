@@ -20,21 +20,23 @@
             <TextBox x:Name="txtLastName" TextWrapping="Wrap"  />
             <TextBlock  TextWrapping="Wrap" Text="First Name: "/>
             <TextBox x:Name="txtFirstName" TextWrapping="Wrap" />
-            <CalendarDatePicker x:Name="datumRodjenjaCalendarDatePicker" Header="Datum rodjenja" />
+            <TextBlock TextWrapping="Wrap" Text="JMBG" />
+            <TextBox x:Name="txtJmbg" TextWrapping="Wrap" Text=""/>
             <TextBlock  TextWrapping="Wrap" Text="E-Mail: " />
             <TextBox x:Name="txtEmail" TextWrapping="Wrap"/>
             <TextBlock  TextWrapping="Wrap" Text="Adresa: " />
             <TextBox x:Name="txtAdress" TextWrapping="Wrap"  />
             <Button x:Name="btnRegistracija" Margin="40,10,0,0"  Click="btnRegistracija_Click" Content="Registracija"/>
         </StackPanel>
-        <StackPanel Margin="366,50,10,39">
+        <StackPanel Margin="366,145,10,39">
             <TextBlock  TextWrapping="Wrap" Text="Korisnicko ime: " />
             <TextBox x:Name="txtKorisnickoIme" TextWrapping="Wrap"/>
 
 
             <TextBlock  TextWrapping="Wrap" Text="Lozinka: " />
-            <TextBox x:Name="txtLozinka" TextWrapping="Wrap"  />
+            <TextBox x:Name="txtLozinka" TextWrapping="Wrap"  Margin="0,0,-0.667,0"  />
            
+
 
 
         </StackPanel>

@@ -92,6 +92,9 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Azure.xaml.cs">
+      <DependentUpon>Azure.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DataSource\Podaci.cs" />
     <Compile Include="PPocetna.xaml.cs">
       <DependentUpon>PPocetna.xaml</DependentUpon>
@@ -115,7 +118,7 @@
     <Compile Include="Models\Administrator.cs" />
     <Compile Include="Models\Karton.cs" />
     <Compile Include="Models\Narudzba.cs" />
-    <Compile Include="Models\Pacijent.cs" />
+    <Compile Include="Models\Pacijent1.cs" />
     <Compile Include="Models\Stomatolog.cs" />
     <Compile Include="Models\StomatoloskaOrdinacija.cs" />
     <Compile Include="Views\Pacijent.xaml.cs">
@@ -151,6 +154,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Azure.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PPocetna.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

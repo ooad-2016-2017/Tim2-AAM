@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace StomatoloskaOrdinacija.Models
 {
-    public class Pacijent
+    public class Pacijent1
     {
         
         [PrimaryKey, AutoIncrement]
@@ -42,14 +42,6 @@ namespace StomatoloskaOrdinacija.Models
             get; set;
         }
 
-        public DateTime Sljedeci_termin
-        {
-            get; set;
-        }
-
-        internal Karton Karton
-        {
-            get; set;
-        }
+        
     }
 }

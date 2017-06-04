@@ -7,35 +7,36 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d" Width="1427.051" Height="1338.305">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="238,134,346,472">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="10,10,179,298.333">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" MinWidth="70"/>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition  />
-            <RowDefinition   />
-            <RowDefinition />
-            <RowDefinition  />
-            <RowDefinition  />
-            <RowDefinition  />
-            <RowDefinition  />
+            <RowDefinition Height="114*" />
+            <RowDefinition Height="114*" />
+            <RowDefinition Height="114*" />
+            <RowDefinition Height="84*"  />
+            <RowDefinition Height="31*"/>
+            <RowDefinition Height="114*"   />
+            <RowDefinition Height="115*" />
+            <RowDefinition Height="Auto"  />
+            <RowDefinition Height="114*"  />
+            <RowDefinition Height="115*"  />
+            <RowDefinition Height="114*"  />
         </Grid.RowDefinitions>
-        <Image x:Name="image" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="10,10,10,5" VerticalAlignment="Stretch"  Grid.RowSpan="4">
+        <Image x:Name="image" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="0,10,337,0" VerticalAlignment="Stretch"  Grid.RowSpan="3">
             <Image.Source>
                 <BitmapImage DecodePixelWidth="200" UriSource="Assets/StomatoloskaLogo.png"/>
             </Image.Source>
         </Image>
 
-        <Button x:Name="btnRegistracija"  Content="Registruj se " HorizontalAlignment="Stretch" Margin="10,5,10,5" Grid.Row="9" VerticalAlignment="Stretch" Grid.ColumnSpan="2" Click="btnRegistracija_Click"/>
-        <Button x:Name="btnLogin" Content="Login" Grid.Column="1" HorizontalAlignment="Stretch" Margin="49,10,111,0" Grid.Row="6" VerticalAlignment="Stretch" Click="btnLogin_Click"/>
-        <TextBox x:Name="txtBoxUsername" HorizontalAlignment="Stretch" Margin="10,16,10,15" Grid.Row="4" TextWrapping="Wrap"  VerticalAlignment="Center" Grid.Column="1" Height="32"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Right" Margin="0,22,0,21" Grid.Row="4" TextWrapping="Wrap" Text="Username:" VerticalAlignment="Center" Height="20" Width="70"/>
-        <TextBlock x:Name="textBlock1" HorizontalAlignment="Right" Margin="0,22,0,21" Grid.Row="5" TextWrapping="Wrap" Text="Sifra:" VerticalAlignment="Center" Height="20" Width="32"/>
-        <PasswordBox x:Name="pwBox" HorizontalAlignment="Stretch" Margin="10,16,10,15" Grid.Row="5" VerticalAlignment="Center" Grid.Column="1" Height="32"/>
+        <Button x:Name="btnRegistracija"  Content="Registruj se " HorizontalAlignment="Stretch" Margin="284,3.333,700,75" Grid.Row="7" VerticalAlignment="Stretch" Click="btnRegistracija_Click" Grid.Column="1" FontSize="18" Grid.RowSpan="2"/>
+        <Button x:Name="btnLogin" Content="Login" Grid.Column="1" HorizontalAlignment="Stretch" Margin="10,3.333,995,75" Grid.Row="7" VerticalAlignment="Stretch" Click="btnLogin_Click" FontSize="18" Grid.RowSpan="2"/>
+        <TextBox x:Name="txtBoxUsername" HorizontalAlignment="Stretch" Margin="10,0.333,700,41" Grid.Row="5" TextWrapping="Wrap"  VerticalAlignment="Center" Grid.Column="1" Height="73" TextChanged="txtBoxUsername_TextChanged"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Right" Margin="0,47.333,0,47" Grid.Row="5" TextWrapping="Wrap" Text="Username:" VerticalAlignment="Center" Height="20" Width="70"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Right" Margin="0,48,0,46.667" Grid.Row="6" TextWrapping="Wrap" Text="Sifra:" VerticalAlignment="Center" Height="20" Width="32"/>
+        <PasswordBox x:Name="pwBox" HorizontalAlignment="Left" Margin="10,2,0,40.667" Grid.Row="6" VerticalAlignment="Center" Grid.Column="1" Height="72" Width="458"/>
 
     </Grid>
 </Page>

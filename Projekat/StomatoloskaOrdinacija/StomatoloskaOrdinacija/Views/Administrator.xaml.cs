@@ -13,7 +13,9 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-
+using StomatoloskaOrdinacija.Models;
+using Microsoft.WindowsAzure.MobileServices;
+using Windows.UI.Popups;
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace StomatoloskaOrdinacija
@@ -26,21 +28,23 @@ namespace StomatoloskaOrdinacija
 
         string path;
         SQLite.Net.SQLiteConnection con;
+        IMobileServiceTable<Stomatolog> userTableObj1 = App.MobileService.GetTable<Stomatolog>();
         public Administrator()
         {
             this.InitializeComponent();
             this.path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "db2.sqlite");
             con = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
-            con.CreateTable<Models.Stomatolog>();
+            con.CreateTable<Stomatolog>();
         }
 
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            Models.Stomatolog s = new Models.Stomatolog();
+            Stomatolog s = new Stomatolog();
             s.Ime = textBox6.Text;
             s.Prezime = textBox8.Text;
             s.User_name = textBox4.Text;
+            userTableObj1.InsertAsync(s);
             s.Lozinka = textBox3.Text;
             s.Adresa = textBox7.Text;
             s.Email = textBox5.Text;
@@ -51,7 +55,7 @@ namespace StomatoloskaOrdinacija
         private void button_Click(object sender, RoutedEventArgs e)
         {
             // Brisanje stomatologa
-            Models.Stomatolog s = new Models.Stomatolog();
+            Stomatolog s = new Stomatolog();
             s.Ime = textBox.Text;
             s.Prezime = textBox1.Text;
             s.User_name = textBox2.Text;

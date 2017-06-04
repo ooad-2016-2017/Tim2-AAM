@@ -37,7 +37,7 @@
                     <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="122" Margin="438,95,-489,-95"/>
                     <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="122" Margin="438,45,-489,-45"/>
                     <TextBox x:Name="textBox5" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" Margin="119,195,-198,-207"/>
-                    <Button x:Name="button1" Content="Potvrdi" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="100" Margin="460,205,-496.333,-205"/>
+                    <Button x:Name="button1" Content="Potvrdi" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="100" Margin="460,205,-496.333,-205" Click="button1_Click"/>
                 </RelativePanel>
 
             </PivotItem>

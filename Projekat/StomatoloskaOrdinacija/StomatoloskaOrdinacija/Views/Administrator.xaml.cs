@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -22,9 +23,28 @@ namespace StomatoloskaOrdinacija
     /// </summary>
     public sealed partial class Administrator : Page
     {
+
+        string path;
+        SQLite.Net.SQLiteConnection con;
         public Administrator()
         {
             this.InitializeComponent();
+            this.path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "db2.sqlite");
+            con = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
+            con.CreateTable<Models.Stomatolog>();
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            Models.Stomatolog s = new Models.Stomatolog();
+            s.Ime = textBox6.Text;
+            s.Prezime = textBox8.Text;
+            s.User_name = textBox4.Text;
+            s.Lozinka = textBox3.Text;
+            s.Adresa = textBox7.Text;
+            s.Email = textBox5.Text;
+            var add = con.Insert(s);
+            Debug.WriteLine(path);
         }
     }
 }

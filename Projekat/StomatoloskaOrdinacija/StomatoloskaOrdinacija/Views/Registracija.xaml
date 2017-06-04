@@ -34,7 +34,7 @@
 
             <TextBlock  TextWrapping="Wrap" Text="Lozinka: " />
             <TextBox x:Name="txtLozinka" TextWrapping="Wrap"  />
-            <Button Name="btnLogin" Margin="40,10,0,0"  Click="btnLogin_Click">Prijava</Button>
+           
 
 
         </StackPanel>

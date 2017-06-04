@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -23,9 +24,19 @@ namespace StomatoloskaOrdinacija
     /// </summary>
     public sealed partial class PPocetna : Page
     {
+        private Models.Administrator admin;
+        string path;
+        SQLite.Net.SQLiteConnection con;
+
         public PPocetna()
         {
             this.InitializeComponent();
+            admin = new Models.Administrator();
+            admin.User_name = "admin";
+            admin.Lozinka = "admin";
+            this.path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "db2.sqlite");
+            con = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
+            
         }
 
         private async void btnLogin_Click(object sender, RoutedEventArgs e)
@@ -44,6 +55,19 @@ namespace StomatoloskaOrdinacija
 
             //    await dialog.showasync();
             //}
+            /*OVO TI JE DA VIDIS KAKO CES POKUPITI IZ BAZE*/
+             var query = con.Table<Models.Pacijent>();
+            string us = txtBoxUsername.Text;
+            string pass = pwBox.Password;
+                foreach (var item in query)
+                {
+                    if(item.User_name == us && item.Lozinka == pass)
+                {
+                    Debug.WriteLine("nasao");
+                }
+                  
+                }
+             
             this.Frame.Navigate(typeof(Pocetna));
 
             var dialog = new MessageDialog("pogrešno korisničko ime/šifra!", "neuspješna prijava");

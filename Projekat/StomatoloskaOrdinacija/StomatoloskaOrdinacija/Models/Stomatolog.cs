@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite.Net.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,84 +9,35 @@ namespace StomatoloskaOrdinacija.Models
 {
     public class Stomatolog
     {
-        private String ime;
-        private String prezime;
-        private String user_name;
-        private String lozinka;
-        private List<Pacijent> mojipacijetni;
+        
 
-        public Stomatolog(string ime, string prezime, string user_name, string lozinka, List<Pacijent> mojipacijetni)
-        {
-            this.ime = ime;
-            this.prezime = prezime;
-            this.user_name = user_name;
-            this.lozinka = lozinka;
-            this.mojipacijetni = mojipacijetni;
-        }
-
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
         public string Ime
         {
-            get
-            {
-                return ime;
-            }
-
-            set
-            {
-                ime = value;
-            }
+            get; set;
         }
 
         public string Prezime
         {
-            get
-            {
-                return prezime;
-            }
-
-            set
-            {
-                prezime = value;
-            }
+            get; set;
         }
 
         public string User_name
         {
-            get
-            {
-                return user_name;
-            }
-
-            set
-            {
-                user_name = value;
-            }
+            get; set;
         }
 
         public string Lozinka
         {
-            get
-            {
-                return lozinka;
-            }
-
-            set
-            {
-                lozinka = value;
-            }
+            get; set;
         }
 
         public List<Pacijent> Mojipacijetni
         {
-            get
-            {
-                return mojipacijetni;
-            }
-
-            set
-            {
-                mojipacijetni = value;
-            }
+            get; set;
         }
+        public string Adresa { get; set; }
+        public string Email { get; set; }
     }
 }

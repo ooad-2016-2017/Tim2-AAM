@@ -27,6 +27,7 @@ namespace StomatoloskaOrdinacija
         private Models.Administrator admin;
         string path;
         SQLite.Net.SQLiteConnection con;
+        //SQLite.Net.SQLiteConnection conn;
 
         public PPocetna()
         {
@@ -36,7 +37,8 @@ namespace StomatoloskaOrdinacija
             admin.Lozinka = "admin";
             this.path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "db2.sqlite");
             con = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
-            
+            //conn = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
+            con.CreateTable<Models.Pacijent>();
         }
 
         private async void btnLogin_Click(object sender, RoutedEventArgs e)
@@ -56,7 +58,7 @@ namespace StomatoloskaOrdinacija
             //    await dialog.showasync();
             //}
             /*OVO TI JE DA VIDIS KAKO CES POKUPITI IZ BAZE*/
-            // var query = con.Table<Models.Pacijent>();
+            //var query = conn.Table<Models.Stomatolog>();
             string us = txtBoxUsername.Text;
             string pass = pwBox.Password;
             //    foreach (var item in query)

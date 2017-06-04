@@ -33,10 +33,7 @@ namespace StomatoloskaOrdinacija.Models
             get; set;
         }
 
-        public List<Pacijent> Mojipacijetni
-        {
-            get; set;
-        }
+        
         public string Adresa { get; set; }
         public string Email { get; set; }
     }

@@ -56,23 +56,31 @@ namespace StomatoloskaOrdinacija
             //    await dialog.showasync();
             //}
             /*OVO TI JE DA VIDIS KAKO CES POKUPITI IZ BAZE*/
-             var query = con.Table<Models.Pacijent>();
+            // var query = con.Table<Models.Pacijent>();
             string us = txtBoxUsername.Text;
             string pass = pwBox.Password;
-                foreach (var item in query)
-                {
-                    if(item.User_name == us && item.Lozinka == pass)
-                {
-                    Debug.WriteLine("nasao");
-                }
-                  
-                }
-             
-            this.Frame.Navigate(typeof(Pocetna));
+            //    foreach (var item in query)
+            //    {
+            //        if(item.User_name == us && item.Lozinka == pass)
+            //    {
+            //        Debug.WriteLine("nasao");
+            //    }
 
-            var dialog = new MessageDialog("pogrešno korisničko ime/šifra!", "neuspješna prijava");
+            //    }
+            if (us == admin.User_name && pass == admin.Lozinka)
+            {
+                this.Frame.Navigate(typeof(Administrator));
+            }
+            else
+            {
+                this.Frame.Navigate(typeof(PPocetna));
 
-            await dialog.ShowAsync();
+
+
+                var dialog = new MessageDialog("pogrešno korisničko ime/šifra!", "neuspješna prijava");
+
+                await dialog.ShowAsync();
+            }
         }
     }
     

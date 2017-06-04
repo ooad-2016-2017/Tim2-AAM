@@ -25,13 +25,13 @@ namespace StomatoloskaOrdinacija
     {
 
         string path;
-        SQLite.Net.SQLiteConnection con;
+        SQLite.Net.SQLiteConnection conn;
         public Administrator()
         {
             this.InitializeComponent();
             this.path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "db2.sqlite");
-            con = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
-            con.CreateTable<Models.Stomatolog>();
+            conn = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
+            conn.CreateTable<Models.Stomatolog>();
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
@@ -43,7 +43,7 @@ namespace StomatoloskaOrdinacija
             s.Lozinka = textBox3.Text;
             s.Adresa = textBox7.Text;
             s.Email = textBox5.Text;
-            var add = con.Insert(s);
+            var add = conn.Insert(s);
             Debug.WriteLine(path);
         }
     }

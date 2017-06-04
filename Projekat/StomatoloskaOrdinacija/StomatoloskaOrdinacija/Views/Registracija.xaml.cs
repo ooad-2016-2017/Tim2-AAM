@@ -35,7 +35,7 @@ namespace StomatoloskaOrdinacija
         }
     
 
-        private void btnRegistracija_Click(object sender, RoutedEventArgs e)
+        private async void btnRegistracija_Click(object sender, RoutedEventArgs e)
         {
             Models.Pacijent p = new Models.Pacijent();
             p.Ime = txtFirstName.Text;
@@ -45,7 +45,11 @@ namespace StomatoloskaOrdinacija
             p.User_name = txtKorisnickoIme.Text;
             //dodati za jmbg
             var adr = con.Insert(p);
-            Debug.WriteLine(path);
+            var dialog = new MessageDialog("Uspjesna registracija!", "Uspjesno ste se registrovali, sada se logujte.");
+            this.Frame.Navigate(typeof(PPocetna));
+            await dialog.ShowAsync();
+            
+            // Debug.WriteLine(path);
         }
 
         

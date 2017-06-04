@@ -42,47 +42,47 @@ namespace StomatoloskaOrdinacija
         }
 
         private async void btnLogin_Click(object sender, RoutedEventArgs e)
-        {
-
-            var korisnickoIme = txtBoxUsername.Text;
-            var sifra = pwBox.Password;
-            //var korisnik = datasourcemenumd.provjerakorisnika(korisnickoime, sifra);
-            //if (korisnik != null && korisnik.korisnikid > 0)
-            //{
-            //    this.frame.navigate(typeof(mainpage), korisnik);
-            //}
-            //else
-            //{
-            //    var dialog = new messagedialog("pogrešno korisničko ime/šifra!", "neuspješna prijava");
-
-            //    await dialog.showasync();
-            //}
-            /*OVO TI JE DA VIDIS KAKO CES POKUPITI IZ BAZE*/
-            //var query = conn.Table<Models.Stomatolog>();
+        {         
             string us = txtBoxUsername.Text;
             string pass = pwBox.Password;
-            //    foreach (var item in query)
-            //    {
-            //        if(item.User_name == us && item.Lozinka == pass)
-            //    {
-            //        Debug.WriteLine("nasao");
-            //    }
-
-            //    }
+            bool pronasao = false;
             if (us == admin.User_name && pass == admin.Lozinka)
             {
                 this.Frame.Navigate(typeof(Administrator));
+                pronasao = true;
             }
-            else
+           
+            var query = con.Table<Models.Pacijent>();
+            foreach (var pacijent in query)
             {
-                this.Frame.Navigate(typeof(PPocetna));
+                if (pacijent.User_name == us && pacijent.Lozinka == pass)
+                {
+                    this.Frame.Navigate(typeof(Pacijent));
+                    pronasao = true;
+                }
+            }
 
+            var queryS = con.Table<Models.Stomatolog>();
+            foreach (var stomatolog in queryS)
+            {
+                if (stomatolog.User_name == us && stomatolog.Lozinka == pass)
+                {
+                    this.Frame.Navigate(typeof(Stomatolog1));
+                    pronasao = true;                   
+                }
+            }
 
-
-                var dialog = new MessageDialog("pogrešno korisničko ime/šifra!", "neuspješna prijava");
-
+            if (pronasao == false)
+            {
+                var dialog = new MessageDialog("Neuspjesana prijava!", "Pogresno ste unijeli username/sifru.");
                 await dialog.ShowAsync();
             }
+
+        }
+
+        private void btnRegistracija_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Pocetna));
         }
     }
     

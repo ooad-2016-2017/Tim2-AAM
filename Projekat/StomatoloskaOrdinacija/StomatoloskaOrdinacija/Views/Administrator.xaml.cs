@@ -32,8 +32,8 @@ namespace StomatoloskaOrdinacija
             this.path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "db2.sqlite");
             con = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
             con.CreateTable<Models.Stomatolog>();
-
         }
+
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
@@ -45,7 +45,17 @@ namespace StomatoloskaOrdinacija
             s.Adresa = textBox7.Text;
             s.Email = textBox5.Text;
             var adr = con.Insert(s);
-            Debug.WriteLine(path);
+            //Debug.WriteLine(path);
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            // Brisanje stomatologa
+            Models.Stomatolog s = new Models.Stomatolog();
+            s.Ime = textBox.Text;
+            s.Prezime = textBox1.Text;
+            s.User_name = textBox2.Text;
+
         }
     }
 }

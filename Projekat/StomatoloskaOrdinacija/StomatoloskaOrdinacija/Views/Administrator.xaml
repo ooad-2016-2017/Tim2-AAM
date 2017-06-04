@@ -20,7 +20,7 @@
                     <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Username uposlenika: " VerticalAlignment="Top" Width="153" Margin="33,128,-124.667,-128"/>
                     <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="182" Margin="199,74,-310,-74"/>
                     <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="182" Margin="199,116,-310,-116"/>
-                    <Button x:Name="button" Content="Obrisi" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="63.3333320617676" Margin="385,170,-384.667,-170"/>
+                    <Button x:Name="button" Content="Obrisi" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="63.3333320617676" Margin="385,170,-384.667,-170" Click="button_Click"/>
                 </RelativePanel>
             </PivotItem>
             <PivotItem Header="Dodaj uposlenika" >

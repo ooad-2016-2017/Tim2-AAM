@@ -5,9 +5,9 @@
     xmlns:local="using:StomatoloskaOrdinacija"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d" Width="1964">
+    mc:Ignorable="d" Width="1427.051" Height="1338.305">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="272,10,468,0">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="238,134,346,472">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" MinWidth="70"/>
             <ColumnDefinition />
@@ -26,11 +26,11 @@
         </Grid.RowDefinitions>
         <Image x:Name="image" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="10,10,10,5" VerticalAlignment="Stretch"  Grid.RowSpan="4">
             <Image.Source>
-                <BitmapImage DecodePixelWidth="200" UriSource="Assets/StoreLogo.png"/>
+                <BitmapImage DecodePixelWidth="200" UriSource="Assets/StomatoloskaLogo.png"/>
             </Image.Source>
         </Image>
 
-        <Button x:Name="btnRegistracija"  Content="Registruj se " HorizontalAlignment="Stretch" Margin="10,5,10,5" Grid.Row="9" VerticalAlignment="Stretch" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnRegistracija"  Content="Registruj se " HorizontalAlignment="Stretch" Margin="10,5,10,5" Grid.Row="9" VerticalAlignment="Stretch" Grid.ColumnSpan="2" Click="btnRegistracija_Click"/>
         <Button x:Name="btnLogin" Content="Login" Grid.Column="1" HorizontalAlignment="Stretch" Margin="49,10,111,0" Grid.Row="6" VerticalAlignment="Stretch" Click="btnLogin_Click"/>
         <TextBox x:Name="txtBoxUsername" HorizontalAlignment="Stretch" Margin="10,16,10,15" Grid.Row="4" TextWrapping="Wrap"  VerticalAlignment="Center" Grid.Column="1" Height="32"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Right" Margin="0,22,0,21" Grid.Row="4" TextWrapping="Wrap" Text="Username:" VerticalAlignment="Center" Height="20" Width="70"/>

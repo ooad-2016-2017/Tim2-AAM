@@ -11,8 +11,8 @@
         <Grid.RenderTransform>
             <CompositeTransform Rotation="0.176"/>
         </Grid.RenderTransform>
-        <Pivot Title="Prijavljeni ste kao administrator!" Margin="31,31,10,10" FontStyle="Italic" Foreground="#FF0A1983">
-            <PivotItem Header="Obrisi uposlenika" Margin="14,10,39,23">
+        <Pivot Title="Prijavljeni ste kao administrator!" Margin="31,31,10,431" FontStyle="Italic" Foreground="#FF0A1983">
+            <PivotItem Header="Obrisi uposlenika" Margin="14,10,39,18">
                 <RelativePanel HorizontalAlignment="Left" Height="229" Margin="10,10,0,0" VerticalAlignment="Top" Width="533">
                     <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Ime uposlenika: " VerticalAlignment="Top" Width="107" Margin="33,44,-78.667,-44"/>
                     <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Prezime uposlenika: " VerticalAlignment="Top" Width="135" Margin="33,86,-106.667,-86"/>
@@ -42,5 +42,6 @@
 
             </PivotItem>
         </Pivot>
+        <Button x:Name="buttonLogOut" Content="Odjavi Se" HorizontalAlignment="Left" Margin="110,678,0,0" VerticalAlignment="Top" Click="buttonLogOut_Click"/>
     </Grid>
 </Page>

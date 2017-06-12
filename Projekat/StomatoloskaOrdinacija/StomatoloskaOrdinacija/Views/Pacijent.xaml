@@ -17,15 +17,18 @@
                     <CalendarDatePicker HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="127" Margin="72,89,-72,-89" PlaceholderText=""/>
                     <CalendarDatePicker HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="127" Margin="72,53,-72,-53" PlaceholderText=""/>
                     <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Slobodni termini: " VerticalAlignment="Top" Width="118" Margin="260,10,-316.333,-10"/>
-                    <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="120" VerticalAlignment="Top" Width="283" Margin="260,58,0,-168"/>
-                    <Button x:Name="button1" Content="Potvrdi" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="77" Margin="379,188,-391.667,-188"/>
+                    <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="120" VerticalAlignment="Top" Width="283" Margin="260,68,0,-178"/>
+                    <Button x:Name="button1" Content="Potvrdi" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="77" Margin="379,188,-391.667,-188" Click="button1_Click"/>
+                    <Button x:Name="button15" Content="Odjavi Se" HorizontalAlignment="Left" Margin="178,250,-197,-250" Width="85" Click="button15_Click" />
                 </RelativePanel>
             </PivotItem>
             <PivotItem Header="Pregled kartona">
                 <RelativePanel HorizontalAlignment="Left" Height="230" VerticalAlignment="Top" Width="596">
-                    <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Pregled azuriranja po terminima: " VerticalAlignment="Top" Width="221" Margin="10,10,-169.333,-10"/>
-                    <ListBox x:Name="listBox1" HorizontalAlignment="Left" Height="156" VerticalAlignment="Top" Width="221" Margin="10,35,0,-141"/>
-                    <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="156" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="235" Margin="296,35,-460,-159" IsReadOnly="True"/>
+                    <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Termini: " VerticalAlignment="Top" Width="221" Margin="10,10,-169.333,-10"/>
+                    <ListBox x:Name="listBox1" HorizontalAlignment="Left" Height="155" VerticalAlignment="Top" Width="198" Margin="10,35,0,-140" />
+                    <TextBox x:Name="textBox" Text ="Odaberite termin i potvrdite da se prikazu pojedinost"  HorizontalAlignment="Left" Height="165" TextWrapping="Wrap"  VerticalAlignment="Top" Width="167" Margin="338,35,-434,-168" IsReadOnly="True" RenderTransformOrigin="0.491,0.515"/>
+                    <Button x:Name="button16" Content="Odjavi Se" HorizontalAlignment="Left" Margin="203,243,-232,-243" Width="95" Click="button16_Click" />
+                    <Button x:Name="button" Content="Potvrdi" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="80" Margin="228,48,-243,-48" Click="button_Click"/>
 
                 </RelativePanel>
             </PivotItem>

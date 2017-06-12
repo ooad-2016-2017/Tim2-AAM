@@ -38,7 +38,7 @@ namespace StomatoloskaOrdinacija
         }
 
 
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private async void button1_Click(object sender, RoutedEventArgs e)
         {
             Stomatolog s = new Stomatolog();
             s.Ime = textBox6.Text;
@@ -49,10 +49,17 @@ namespace StomatoloskaOrdinacija
             s.Adresa = textBox7.Text;
             s.Email = textBox5.Text;
             var adr = con.Insert(s);
-            //Debug.WriteLine(path);
+            var dialog = new MessageDialog("Stomatolog uspjesno dodan!", "Uspjesno ste dodali stomatologa.");
+            await dialog.ShowAsync();
+            textBox6.Text = String.Empty;
+            textBox7.Text = String.Empty;
+            textBox8.Text = String.Empty;
+            textBox3.Text = String.Empty;
+            textBox4.Text = String.Empty;
+            textBox5.Text = String.Empty;
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private async void button_Click(object sender, RoutedEventArgs e)
         {
             // Brisanje stomatologa
             Stomatolog s = new Stomatolog();
@@ -60,6 +67,38 @@ namespace StomatoloskaOrdinacija
             s.Prezime = textBox1.Text;
             s.User_name = textBox2.Text;
 
+            bool pronasao = false;
+            var queryS = con.Table<Models.Stomatolog>();
+            if (pronasao == false)
+            {
+                foreach (var stomatolog in queryS)
+                {
+                    if (stomatolog.User_name == s.User_name)
+                    {
+
+                        var dialog = new MessageDialog("Uspjesno obrisan!", "Uspjesno ste obrisali stomatologa.");
+                        await dialog.ShowAsync();
+
+                        pronasao = true;
+                    }
+                }
+            }
+            if (pronasao == false)
+            {               
+                var dialog = new MessageDialog("Greska!", "Stomatolog nije pronadjen.");
+                await dialog.ShowAsync();            
+
+            }
+            textBox.Text = String.Empty;
+            textBox1.Text = String.Empty;
+            textBox2.Text = String.Empty;
+        }
+
+        private async void buttonLogOut_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(PPocetna));
+            var dialog = new MessageDialog("Odjava!", "Uspjesno ste se odjavili sa sistema.");
+            await dialog.ShowAsync();
         }
     }
 }

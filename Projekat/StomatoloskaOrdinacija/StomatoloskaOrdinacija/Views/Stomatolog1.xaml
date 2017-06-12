@@ -9,7 +9,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,0,-83,-115">
         <Pivot Title="Prijavljeni ste kao stomatolog!" Margin="0,-4,10,0" FontStyle="Italic" >
-            <PivotItem Header="Pregled narucenih pacijenata" FontSize="10" Margin="22,0,0,0">
+            <PivotItem Header="Pregled narucenih pacijenata" FontSize="10" Margin="22,0,0,5">
                 <RelativePanel Margin="10,10,161,27">
                     <TextBlock  TextWrapping="Wrap" Text="Datum: "  />
                     <TextBox x:Name="txtDatum1" TextWrapping="Wrap" Margin="0,18,-151,3"  />
@@ -23,6 +23,7 @@
                     <TextBox x:Name="txtIme3" TextWrapping="Wrap" Margin="332,92,-483,-71"  />
                     <TextBlock  TextWrapping="Wrap" Text="Vrijeme: " Margin="168,0,-275,-13.667"  />
                     <TextBlock  TextWrapping="Wrap" Text="Ime i prezime: " Margin="332,0,-332,-3.333"  />
+                    <Button x:Name="button15" Content="Odjavi Se" HorizontalAlignment="Left" Margin="493,239,-507,-239" Width="80" Click="button15_Click" />
                 </RelativePanel>
 
 
@@ -31,17 +32,20 @@
             </PivotItem>
             <PivotItem Header="Azuriraj karton" FontSize="10" Margin="10,0,0,2">
                 <RelativePanel HorizontalAlignment="Left" Height="357" Margin="10,0,0,0" VerticalAlignment="Top" Width="678">
-                    <TextBlock  TextWrapping="Wrap" Text="Pronadji karton pacijenta " FontSize="14"  />
+                    <TextBlock  TextWrapping="Wrap" Text="Pronadji karton pacijenta (Unesite ime i prezime pacijenta)" FontSize="14"  />
                     <TextBox x:Name="txtIme" TextWrapping="Wrap" Margin="0,24,-167,10"  />
                     <TextBlock  TextWrapping="Wrap" Text="Pregled proslih azuriranja: " FontSize="14" Margin="0,61,-0.667,-61.667" />
                     <TextBlock  TextWrapping="Wrap" Text="Azuriranje " FontSize="14" Margin="482,66,-559,-68"  />
-                    <TextBox x:Name="txtAzuriranje" TextWrapping="Wrap" Margin="482,90,-590,-57"  />
-                    <TextBox x:Name="txtPregledAzuriranja" TextWrapping="Wrap" Margin="180,85,-455,-295"  />
-                    <CalendarDatePicker x:Name="datumterminaCalendarDatePicker" Header="Termin trenutnog azuriranja" Margin="482,122,-484,-121.667" FontSize="14" Width="205" />
-                    <CalendarDatePicker x:Name="datumterminNaredniCalendarDatePicker" Header="Naredni termin" Margin="482,180,-483,-179.667" FontSize="14" />
-                    <Button x:Name="button" Content="Potvrdi" HorizontalAlignment="Left" Margin="588,263,-602,-263" Width="80" />
-                    <Button x:Name="button1" Content="Odjavi se" HorizontalAlignment="Left" Margin="588,315,-588.667,-315" />
-                    <ListView x:Name="listView" HorizontalAlignment="Left" Height="189" VerticalAlignment="Top" Width="157" Margin="10,90,-167,-279"/>
+                    <TextBox x:Name="txtAzuriranje" TextWrapping="Wrap" Margin="482,90,-590,-57"  IsEnabled="False"/>
+
+
+                    <CalendarDatePicker x:Name="datumterminaCalendarDatePicker" Header="Termin trenutnog azuriranja" Margin="482,122,-484,-121.667" FontSize="14" Width="205"  IsEnabled="False"/>
+                    <CalendarDatePicker x:Name="datumterminNaredniCalendarDatePicker" Header="Naredni termin" Margin="482,180,-483,-179.667" FontSize="14" IsEnabled="False"/>
+                    <Button x:Name="button" Content="Potvrdi" HorizontalAlignment="Left" Margin="588,263,-602,-263" Width="80" Click="button_Click" IsEnabled="False"/>
+                    <Button x:Name="button1" Content="Odjavi se" HorizontalAlignment="Left" Margin="588,315,-588.667,-315" Click="button1_Click" />
+                    <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="180" VerticalAlignment="Top" Width="450" Margin="20,94,-125,-254"/>
+                    <Button x:Name="button2" Content="Pretrazi" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="75" Click="button2_Click" Margin="185,24,-196,-24"/>
+
                 </RelativePanel>
             </PivotItem>
             <PivotItem Header="Azuriraj termine" FontSize="10">
@@ -63,11 +67,11 @@
                             <TextBlock  TextWrapping="Wrap" Text="Vrijeme: " Margin="168,0,-275,-13.667"  />
                             <TextBlock  TextWrapping="Wrap" Text="Ime i prezime: " Margin="332,0,-332,-3.333"  />
                             <TextBlock x:Name="txtDodaj_termin_datuma" TextWrapping="Wrap" Text="Dodaj termin datuma" Margin="10,146,-129.333,-157.333" FontSize="14" />
-                            <CalendarDatePicker HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="151" Margin="168,140,-195,-140"/>
+                            <CalendarDatePicker x:Name ="pickerDatum" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="151" Margin="168,140,-195,-140"/>
                             <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" Text="U(sati)" VerticalAlignment="Top" Width="125" Margin="10,197,-94,-210.667" FontSize="14"/>
-                            <TimePicker HorizontalAlignment="Left" Height="42" VerticalAlignment="Top" Width="131" Margin="168,192,0,-202"/>
-                            <Button x:Name="button3" Content="Potvrdi" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="92" Margin="560,192,-588.333,-192"/>
-                            <Button x:Name="button4" Content="Odjavi se" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="92" Margin="560,232,-588.333,-232"/>
+                            <TimePicker x:Name="vrijemePicker" HorizontalAlignment="Left" Height="42" VerticalAlignment="Top" Width="131" Margin="168,192,0,-202"/>
+                            <Button x:Name="button3" Content="Potvrdi" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="92" Margin="560,192,-588.333,-192" Click="button3_Click"/>
+                            <Button x:Name="button4" Content="Odjavi se" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="92" Margin="560,232,-588.333,-232" Click="button4_Click"/>
                         </RelativePanel>
                     </PivotItem>
                     <PivotItem Header="Obrisi termin">

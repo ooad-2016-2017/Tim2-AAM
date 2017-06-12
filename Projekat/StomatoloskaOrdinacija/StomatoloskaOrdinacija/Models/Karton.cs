@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite.Net.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,39 +9,32 @@ namespace StomatoloskaOrdinacija.Models
 {
     public class Karton
     {
-        private DateTime predlozeni_termin;
-        private List<string> stanje;
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
 
-        public Karton(DateTime predlozeni_termin, List<string> stanje)
+        public bool Zauzet
         {
-            this.predlozeni_termin = predlozeni_termin;
-            this.stanje = stanje;
+            get; set;
         }
 
-        public DateTime Predlozeni_termin
+        public DateTime Datum
         {
-            get
-            {
-                return predlozeni_termin;
-            }
-
-            set
-            {
-                predlozeni_termin = value;
-            }
+            get; set;
         }
 
-        public List<string> Stanje
+        public string Novosti
         {
-            get
-            {
-                return stanje;
-            }
+            get; set;
+        }
 
-            set
-            {
-                stanje = value;
-            }
+        public int idPacijenta
+        {
+            get; set;
+        }
+
+        public int idStomatologa
+        {
+            get; set;
         }
     }
 }

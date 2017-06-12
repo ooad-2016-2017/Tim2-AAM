@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace StomatoloskaOrdinacija
@@ -32,6 +33,7 @@ namespace StomatoloskaOrdinacija
         public PPocetna()
         {
             this.InitializeComponent();
+            
             admin = new Models.Administrator();
             admin.User_name = "admin";
             admin.Lozinka = "admin";
@@ -39,6 +41,22 @@ namespace StomatoloskaOrdinacija
             con = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
             //conn = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
             con.CreateTable<Models.Pacijent1>();
+
+            var queryS = con.Table<Models.Karton>();
+           
+                foreach (var karton in queryS)
+                {
+                Models.Termin tt = new Models.Termin();
+                tt.Datum = karton.Datum;
+                tt.idPacijenta = karton.idPacijenta;
+                tt.idStomatologa = karton.idStomatologa;
+                tt.Novosti = karton.Novosti;
+                tt.Zauzet = karton.Zauzet;
+                Models.SviTermini.Svi.Add(tt);
+                }
+            
+
+
         }
 
         private async void btnLogin_Click(object sender, RoutedEventArgs e)
@@ -53,31 +71,42 @@ namespace StomatoloskaOrdinacija
             }
            
             var query = con.Table<Models.Pacijent1>();
-            foreach (var pacijent in query)
-            {
-                if (pacijent.User_name == us && pacijent.Lozinka == pass)
-                {
-                    this.Frame.Navigate(typeof(Pacijent));
-                    pronasao = true;
-                }
-            }
-
-            var queryS = con.Table<Models.Stomatolog>();
-            foreach (var stomatolog in queryS)
-            {
-                if (stomatolog.User_name == us && stomatolog.Lozinka == pass)
-                {
-                    this.Frame.Navigate(typeof(Stomatolog1));
-                    pronasao = true;                   
-                }
-            }
-
             if (pronasao == false)
             {
+                foreach (var pacijent in query)
+                {
+                    if (pacijent.User_name == us && pacijent.Lozinka == pass)
+                    {
+                        //Debug.WriteLine(pacijent.Id);
+                        this.Frame.Navigate(typeof(Pacijent), pacijent);
+                        pronasao = true;
+                    }
+                }
+            }
+            var queryS = con.Table<Models.Stomatolog>();
+            if (pronasao == false)
+            {
+                foreach (var stomatolog in queryS)
+                {
+                    if (stomatolog.User_name == us && stomatolog.Lozinka == pass)
+                    {
+                        this.Frame.Navigate(typeof(Stomatolog1), stomatolog);
+                        
+
+                        pronasao = true;
+                    }
+                }
+            }
+            if (pronasao == false)
+            {
+                txtBoxUsername.Text = String.Empty;
+                 pwBox.Password = String.Empty;
                 var dialog = new MessageDialog("Neuspjesana prijava!", "Pogresno ste unijeli username/sifru.");
                 await dialog.ShowAsync();
+                
+                
             }
-
+            Debug.WriteLine(path);
         }
 
         private void btnRegistracija_Click(object sender, RoutedEventArgs e)
